@@ -1,0 +1,33 @@
+e-commerce-app/
+├── user-auth-service/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   ├── utils.py
+│   │   └── config.py
+│   ├── tests/
+│   ├── Dockerfile
+│   └── requirements.txt
+├── product-management-service/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   ├── utils.py
+│   │   └── config.py
+│   ├── tests/
+│   ├── Dockerfile
+│   └── requirements.txt
+├── order-processing-service/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── routes.py
+│   │   ├── utils.py
+│   │   └── config.py
+│   ├── tests/
+│   ├── Dockerfile
+│   └── requirements.txt
+├── docker-compose.yml
+└── README.md

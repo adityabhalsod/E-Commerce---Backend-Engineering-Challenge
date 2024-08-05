@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  user-auth-service:
+    build: ./user-auth-service
+    ports:
+      - "5001:5000"
+    environment:
+      - SECRET_KEY=mysecretkey
+      - JWT_SECRET_KEY=myjwtsecretkey
+    volumes:
+      - ./user-auth-service:/app
+
+  product-management-service:
+    build: ./product-management-service
+    ports:
+      - "5002:5000"
+    environment:
+      - SECRET_KEY=mysecretkey
+    volumes:
+      - ./product-management-service:/app
+
+  order-processing-service:
+    build: ./order-processing-service
+    ports:
+      - "5003:5000"
+    environment:
+      - SECRET_KEY=mysecretkey
+      - JWT_SECRET_KEY=myjwtsecretkey
+    volumes:
+      - ./order-processing-service:/app
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:80" # temporary set 8000 because in my system, port 80 is alredy in running.
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - user-auth-service
+      - product-management-service
+      - order-processing-service
