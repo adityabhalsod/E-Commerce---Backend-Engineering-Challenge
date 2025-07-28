@@ -4,7 +4,7 @@ services:
   user-auth-service:
     build: ./user-auth-service
     ports:
-      - "5001:5000"
+      - "5001:5001"
     environment:
       - SECRET_KEY=mysecretkey
       - JWT_SECRET_KEY=myjwtsecretkey
@@ -14,7 +14,7 @@ services:
   product-management-service:
     build: ./product-management-service
     ports:
-      - "5002:5000"
+      - "5002:5002"
     environment:
       - SECRET_KEY=mysecretkey
     volumes:
@@ -23,7 +23,7 @@ services:
   order-processing-service:
     build: ./order-processing-service
     ports:
-      - "5003:5000"
+      - "5003:5003"
     environment:
       - SECRET_KEY=mysecretkey
       - JWT_SECRET_KEY=myjwtsecretkey
